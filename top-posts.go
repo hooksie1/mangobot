@@ -2,6 +2,7 @@ package p
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -9,11 +10,9 @@ import (
 
 //<a href="http://google.com">link</a>.'
 
-func getRecent() []string {
+func getRecent() Recent {
 
 	var recent Recent
-
-	messages := []string{}
 
 	req, err := http.Get("https://mangolassi.it/api/recent")
 	if err != nil {
@@ -27,20 +26,19 @@ func getRecent() []string {
 
 	err = json.Unmarshal(body, &recent)
 
-	for _, v := range recent.Topics {
-		messages = append(messages, v.Slug)
-	}
-
-	return messages
+	return recent
 
 }
 
 func createRecent() string {
-	messages := getRecent()
+	topics := getRecent()
 
 	message := ""
-	for i, v := range messages {
-		message += string(i) + v + "\n"
+	link := ""
+
+	for i := 0; i < 10; i++ {
+		link = fmt.Sprintf("<a href=\"https://mangolassi.it/topic/%v\">%s</a>", topics.Topics[i].Slug, topics.Topics[i].Title)
+		message += string(i) + " - " + link + "\n"
 	}
 
 	return message
