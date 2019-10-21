@@ -371,3 +371,272 @@ type Users struct {
 			} `json:"footer"`                                             
 	} `json:"widgets"`                                                    
 }   
+
+type Recent struct {
+	NextStart  int `json:"nextStart"`
+	TopicCount int `json:"topicCount"`
+	Topics     []struct {
+		Tid             int       `json:"tid"`
+		UID             int       `json:"uid"`
+		Cid             int       `json:"cid"`
+		MainPid         int       `json:"mainPid"`
+		Title           string    `json:"title"`
+		Slug            string    `json:"slug"`
+		Timestamp       int64     `json:"timestamp"`
+		Lastposttime    int64     `json:"lastposttime"`
+		Postcount       int       `json:"postcount"`
+		Viewcount       int       `json:"viewcount"`
+		Locked          int       `json:"locked"`
+		Deleted         int       `json:"deleted"`
+		Pinned          int       `json:"pinned"`
+		TeaserPid       int       `json:"teaserPid"`
+		Upvotes         int       `json:"upvotes"`
+		Downvotes       int       `json:"downvotes"`
+		TitleRaw        string    `json:"titleRaw"`
+		TimestampISO    time.Time `json:"timestampISO"`
+		LastposttimeISO time.Time `json:"lastposttimeISO"`
+		Votes           int       `json:"votes"`
+		Category        struct {
+			Cid        int         `json:"cid"`
+			Name       string      `json:"name"`
+			Slug       string      `json:"slug"`
+			Icon       string      `json:"icon"`
+			Image      interface{} `json:"image"`
+			ImageClass string      `json:"imageClass"`
+			BgColor    string      `json:"bgColor"`
+			Color      string      `json:"color"`
+			Disabled   int         `json:"disabled"`
+		} `json:"category"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		Teaser struct {
+			Pid          int       `json:"pid"`
+			UID          int       `json:"uid"`
+			Timestamp    int64     `json:"timestamp"`
+			Tid          int       `json:"tid"`
+			Content      string    `json:"content"`
+			TimestampISO time.Time `json:"timestampISO"`
+			User         struct {
+				UID         int    `json:"uid"`
+				Username    string `json:"username"`
+				Userslug    string `json:"userslug"`
+				Picture     string `json:"picture"`
+				IconText    string `json:"icon:text"`
+				IconBgColor string `json:"icon:bgColor"`
+			} `json:"user"`
+			Index int `json:"index"`
+		} `json:"teaser"`
+		Tags      []interface{} `json:"tags"`
+		IsOwner   bool          `json:"isOwner"`
+		Ignored   bool          `json:"ignored"`
+		Unread    bool          `json:"unread"`
+		Bookmark  int           `json:"bookmark"`
+		Unreplied bool          `json:"unreplied"`
+		Icons     []interface{} `json:"icons"`
+		Index     int           `json:"index"`
+		Thumb     string        `json:"thumb,omitempty"`
+		User      struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+		User struct {
+			UID                 int    `json:"uid"`
+			Username            string `json:"username"`
+			Fullname            string `json:"fullname"`
+			Userslug            string `json:"userslug"`
+			Reputation          int    `json:"reputation"`
+			Postcount           int    `json:"postcount"`
+			Picture             string `json:"picture"`
+			Signature           string `json:"signature"`
+			Banned              int    `json:"banned"`
+			Status              string `json:"status"`
+			IconText            string `json:"icon:text"`
+			IconBgColor         string `json:"icon:bgColor"`
+			BannedUntilReadable string `json:"banned_until_readable"`
+		} `json:"user,omitempty"`
+	} `json:"topics"`
+	Tids       []int `json:"tids"`
+	CanPost    bool  `json:"canPost"`
+	Categories []struct {
+		Cid             int           `json:"cid"`
+		Name            string        `json:"name"`
+		Slug            string        `json:"slug"`
+		Icon            string        `json:"icon"`
+		Link            string        `json:"link"`
+		Color           string        `json:"color"`
+		BgColor         string        `json:"bgColor"`
+		ParentCid       int           `json:"parentCid"`
+		Image           interface{}   `json:"image"`
+		ImageClass      string        `json:"imageClass"`
+		Selected        bool          `json:"selected"`
+		Children        []interface{} `json:"children"`
+		Level           string        `json:"level"`
+		BackgroundImage string        `json:"backgroundImage,omitempty"`
+	} `json:"categories"`
+	AllCategoriesURL string        `json:"allCategoriesUrl"`
+	SelectedCids     []interface{} `json:"selectedCids"`
+	FeedsDisableRSS  int           `json:"feeds:disableRSS"`
+	RssFeedURL       string        `json:"rssFeedUrl"`
+	Title            string        `json:"title"`
+	Filters          []struct {
+		Name     string `json:"name"`
+		URL      string `json:"url"`
+		Selected bool   `json:"selected"`
+		Filter   string `json:"filter"`
+	} `json:"filters"`
+	SelectedFilter struct {
+		Name     string `json:"name"`
+		URL      string `json:"url"`
+		Selected bool   `json:"selected"`
+		Filter   string `json:"filter"`
+	} `json:"selectedFilter"`
+	Terms []struct {
+		Name     string `json:"name"`
+		URL      string `json:"url"`
+		Selected bool   `json:"selected"`
+		Term     string `json:"term"`
+	} `json:"terms"`
+	SelectedTerm struct {
+		Name     string `json:"name"`
+		URL      string `json:"url"`
+		Selected bool   `json:"selected"`
+		Term     string `json:"term"`
+	} `json:"selectedTerm"`
+	Pagination struct {
+		Rel []struct {
+			Rel  string `json:"rel"`
+			Href string `json:"href"`
+		} `json:"rel"`
+		Pages []struct {
+			Page      int    `json:"page,omitempty"`
+			Active    bool   `json:"active,omitempty"`
+			Qs        string `json:"qs,omitempty"`
+			Separator bool   `json:"separator,omitempty"`
+		} `json:"pages"`
+		CurrentPage int `json:"currentPage"`
+		PageCount   int `json:"pageCount"`
+		Prev        struct {
+			Page   int    `json:"page"`
+			Active bool   `json:"active"`
+			Qs     string `json:"qs"`
+		} `json:"prev"`
+		Next struct {
+			Page   int    `json:"page"`
+			Active bool   `json:"active"`
+			Qs     string `json:"qs"`
+		} `json:"next"`
+		First struct {
+			Page   int    `json:"page"`
+			Active bool   `json:"active"`
+			Qs     string `json:"qs"`
+		} `json:"first"`
+		Last struct {
+			Page   int    `json:"page"`
+			Active bool   `json:"active"`
+			Qs     string `json:"qs"`
+		} `json:"last"`
+	} `json:"pagination"`
+	Breadcrumbs []struct {
+		Text string `json:"text"`
+		URL  string `json:"url,omitempty"`
+	} `json:"breadcrumbs"`
+	LoggedIn     bool   `json:"loggedIn"`
+	RelativePath string `json:"relative_path"`
+	Template     struct {
+		Name   string `json:"name"`
+		Recent bool   `json:"recent"`
+	} `json:"template"`
+	URL       string `json:"url"`
+	BodyClass string `json:"bodyClass"`
+	Widgets   struct {
+		Footer []struct {
+			HTML string `json:"html"`
+		} `json:"footer"`
+		Sidebar []struct {
+			HTML string `json:"html"`
+		} `json:"sidebar"`
+	} `json:"widgets"`
+}

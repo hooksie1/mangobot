@@ -157,4 +157,9 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 		sendMessage(message, metrics)
 	}
 
+	if message.Message.Text == "/recent" || message.Message.Text == "/recent@mangobannedbot" {
+		recent := getRecent()
+		sendMessage(message, recent)
+	}
+
 }
