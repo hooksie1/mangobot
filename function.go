@@ -103,7 +103,7 @@ func getMetrics() string {
 	return message
 }
 
-func sendMessage(m Message, s string) {
+func sendMessage(m Message, s string, p string) {
 	log.Println("setting up message")
 	var response Response
 
@@ -112,6 +112,8 @@ func sendMessage(m Message, s string) {
 	botURL := "https://api.telegram.org/bot" + token + "/sendMessage"
 
 	response.Text = s
+
+	response.ParseMode = p
 
 	var body []byte
 
@@ -149,17 +151,17 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 
 	if message.Message.Text == "/dustin" || message.Message.Text == "/dustin@mangobannedbot" {
 		status := getStatus()
-		sendMessage(message, status)
+		sendMessage(message, status, "text")
 	}
 
 	if message.Message.Text == "/mangometrics" || message.Message.Text == "/mangometrics@mangobannedbot" {
 		metrics := getMetrics()
-		sendMessage(message, metrics)
+		sendMessage(message, metrics, "text")
 	}
 
 	if message.Message.Text == "/recent" || message.Message.Text == "/recent@mangobannedbot" {
 		recent := createRecent()
-		sendMessage(message, recent)
+		sendMessage(message, recent, "telegram.ParseMode.HTML")
 	}
 
 }

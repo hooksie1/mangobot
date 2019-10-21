@@ -33,6 +33,7 @@ type Message struct {
 type Response struct {
 	ChatID int    `json:"chat_id"`
 	Text   string `json:"text"`
+	ParseMode string `json:"parse_mode"`
 }
 
 type mangoUser struct {
