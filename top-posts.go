@@ -37,9 +37,9 @@ func createRecent() string {
 	link := ""
 
 	for i := 0; i < 10; i++ {
-		j := string(i + 1)
-		link = fmt.Sprintf("<a href=\"https://mangolassi.it/topic/%v\">%s</a>", topics.Topics[i].Slug, topics.Topics[i].Title)
-		message += j + " - " + link + "\n"
+		j := i + 1
+		link = fmt.Sprintf("%d - <a href=\"https://mangolassi.it/topic/%v\">%s</a>", j, topics.Topics[i].Slug, topics.Topics[i].Title)
+		message += link + "\n"
 	}
 
 	return message
