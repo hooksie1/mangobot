@@ -161,7 +161,7 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 
 	if message.Message.Text == "/recent" || message.Message.Text == "/recent@mangobannedbot" {
 		recent := createRecent()
-		sendMessage(message, recent, "telegram.ParseMode.HTML")
+		sendMessage(message, recent, "HTML")
 	}
 
 }
