@@ -8,7 +8,10 @@ import (
 )
 
 func getLaunch() string {
-	c := spacex.New()
+	c, err := spacex.NewWithRateLimit(50)
+	if err != nil {
+		log.Println(err)
+	}
 	launch, err := c.GetLatestLaunch()
 	if err != nil {
 		log.Println(err)
