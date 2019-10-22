@@ -171,7 +171,7 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 
 	if message.Message.Text == "/roadster" || message.Message.Text == "/roadster@mangobannedbot" {
 		launch := getRoadster()
-		sendMessage(message, launch, "")
+		sendMessage(message, launch, "HTML")
 	}
 
 }

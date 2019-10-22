@@ -47,7 +47,7 @@ func getRoadster() string {
 
 	for i, v := range roadster.FlickrImages {
 		j := i + 1
-		pic = fmt.Sprintf("<a href=\"https://mangolassi.it/topic/%v\">%d</a>", v, j)
+		pic = fmt.Sprintf("<a href=\"%s\">%d</a>", v, j)
 		pics += pic + "\n"
 	}
 
