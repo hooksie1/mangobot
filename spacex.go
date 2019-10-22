@@ -43,7 +43,7 @@ func getRoadster() string {
 	pic := ""
 	pics := ""
 
-	stats := fmt.Sprintf("Tesla Roadster\nSpeed: %f MPH\nDistance from Earth: %f miles\n, Distance from Mars: %f miles\n Images:\n", roadster.SpeedMph, roadster.EarthDistanceMi, roadster.MarsDistanceMi)
+	stats := fmt.Sprintf("Tesla Roadster\nSpeed: %f MPH\nDistance from Earth: %f miles\nDistance from Mars: %f miles\n Images:\n", roadster.SpeedMph, roadster.EarthDistanceMi, roadster.MarsDistanceMi)
 
 	for i, v := range roadster.FlickrImages {
 		j := i + 1
