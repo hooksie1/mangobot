@@ -1,8 +1,11 @@
 package p
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"net/http"
 
 	"github.com/orcaman/spacex"
 )
@@ -23,17 +26,32 @@ func getLaunch() string {
 }
 
 func getRoadster() string {
-	c, err := spacex.NewWithRateLimit(50)
+	var roadster Roadster
+
+	req, err := http.Get("https://api.spacexdata.com/v3/roadster")
 	if err != nil {
 		log.Println(err)
 	}
 
-	object, err := c.GetObjectInfo("roadster")
+	body, err := ioutil.ReadAll(req.Body)
 	if err != nil {
 		log.Println(err)
 	}
 
-	message := fmt.Sprintf("Name: %s\nSpeed: %f MPH\nDistance from Earth: %f Miles", object.Name, object.SpeedMph, object.EarthDistanceMi)
+	err = json.Unmarshal(body, &roadster)
+
+	pic := ""
+	pics := ""
+
+	stats := fmt.Sprintf("Tesla Roadster\nSpeed: %f\nDistance from Earth: %f, Distance from Mars: %f", roadster.SpeedMph, roadster.EarthDistanceMi, roadster.MarsDistanceMi)
+
+	for i := 0; i < 10; i++ {
+		j := i + 1
+		pic = fmt.Sprintf("<a href=\"https://mangolassi.it/topic/%v\">%d</a>", roadster.FlickrImages[i], j)
+		pics += pic + "\n"
+	}
+
+	message := fmt.Sprintf("%s\n%s", stats, pics)
 
 	return message
 }
