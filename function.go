@@ -151,12 +151,12 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 
 	if message.Message.Text == "/dustin" || message.Message.Text == "/dustin@mangobannedbot" {
 		status := getStatus()
-		sendMessage(message, status, "text")
+		sendMessage(message, status, "")
 	}
 
 	if message.Message.Text == "/mangometrics" || message.Message.Text == "/mangometrics@mangobannedbot" {
 		metrics := getMetrics()
-		sendMessage(message, metrics, "text")
+		sendMessage(message, metrics, "")
 	}
 
 	if message.Message.Text == "/recent" || message.Message.Text == "/recent@mangobannedbot" {
@@ -166,7 +166,7 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 
 	if message.Message.Text == "/launch" || message.Message.Text == "/launch@mangobannedbot" {
 		launch := getLaunch()
-		sendMessage(message, launch, "text")
+		sendMessage(message, launch, "")
 	}
 
 }
