@@ -164,4 +164,9 @@ func Bot(w http.ResponseWriter, r *http.Request) {
 		sendMessage(message, recent, "HTML")
 	}
 
+	if message.Message.Text == "/launch" || message.Message.Text == "/launch@mangobannedbot" {
+		launch := getLaunch()
+		sendMessage(message, launch, "text")
+	}
+
 }
